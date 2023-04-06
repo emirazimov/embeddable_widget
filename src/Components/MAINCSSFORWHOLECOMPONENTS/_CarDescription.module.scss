@@ -1,0 +1,13 @@
+@use "./_FontColor.module.scss" as *;
+
+@mixin car-description-model-name {
+  color: $font-color;
+  font-weight: 600;
+  font-size: 16px;
+}
+
+@mixin car-description-specifications {
+  color: $font-color;
+
+  font-size: 13px;
+}

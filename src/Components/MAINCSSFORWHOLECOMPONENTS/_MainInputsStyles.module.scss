@@ -1,0 +1,51 @@
+@use "./_BorderRadiuses.module.scss" as *;
+@use "./_ColorsForCustomize.module.scss" as *;
+@use "./_FontColor.module.scss" as *;
+
+$inputs-background: transparent;
+$inputs-color: $font-color;
+$inputs-border: 1px solid $borders-color;
+$inputs-border-radius: $inner-elements-border-radius;
+$background-position-x-for-date-time-picker: 4%;
+
+@mixin main-inputs-size-and-background-styles-etc {
+  width: 100%;
+  height: 33px;
+  background-color: $inputs-background;
+  border: $inputs-border;
+  border-radius: $inputs-border-radius;
+  color: $inputs-color;
+  &::placeholder {
+    /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: $inputs-color;
+    opacity: 1; /* Firefox */
+  }
+
+  &:-ms-input-placeholder {
+    /* Internet Explorer 10-11 */
+    color: $inputs-color;
+  }
+
+  &::-ms-input-placeholder {
+    /* Microsoft Edge */
+    color: $inputs-color;
+  }
+  &:focus {
+    outline: none;
+  }
+}
+
+@mixin addressform-inputs-with-icons {
+  padding-left: 37px;
+  padding-right: 35px;
+
+  background-position-x: 2%;
+  background-position-y: 60%;
+}
+@mixin payment-inputs-with-left-padding {
+  padding-left: 11px;
+}
+
+@mixin margin-top-bottom-for-adressfrom-inputs {
+  margin-top: 15px;
+}

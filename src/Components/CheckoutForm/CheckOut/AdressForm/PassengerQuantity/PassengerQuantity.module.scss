@@ -1,0 +1,57 @@
+@use "../../../../MAINCSSFORWHOLECOMPONENTS/_IconsForWholeAddressFormPage.scss"
+  as *;
+@use "../../../../MAINCSSFORWHOLECOMPONENTS/_FontColor.module.scss" as *;
+@use "../../../../MAINCSSFORWHOLECOMPONENTS/MainInputsStyles.module" as *;
+@use "../../../../MAINCSSFORWHOLECOMPONENTS/_AppBackgroundColor.module.scss" as *;
+@use "../../../../MAINCSSFORWHOLECOMPONENTS/_ButtonsGroupBackAndNext.module.scss"
+  as *;
+@use "../../../../MAINCSSFORWHOLECOMPONENTS/_MainCountersStyles.module.scss" as *;
+
+.passengerQuantityWrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  @include margin-top-bottom-for-adressfrom-inputs;
+}
+.passengerQuantityIconAndTitleContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.passengerQuantityIcon {
+  @include passenger_icon_for_counters;
+
+  @include counters-and-switches-icon-margins;
+}
+.passengerCounterTitle {
+  @include global_second_title_styles;
+}
+.passengerQuantityCounterContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.passengerQuantityInputSelf {
+  @include counters-input-styles;
+}
+
+.passengerQuantityMinusSelf,
+.passengerQuantityPlusSelf {
+  @include counters-button-styles;
+  &:hover {
+    filter: brightness(125%);
+  }
+}
+.passengerQuantityMinusSelf {
+  @include counters-buttons-minus-icon;
+  border: $inputs-border;
+  border-top-left-radius: $inputs-border-radius;
+  border-bottom-left-radius: $inputs-border-radius;
+}
+.passengerQuantityPlusSelf {
+  @include counters-buttons-plus-icon;
+  border: $inputs-border;
+  border-top-right-radius: $inputs-border-radius;
+  border-bottom-right-radius: $inputs-border-radius;
+}

@@ -1,0 +1,184 @@
+@use "../../../MAINCSSFORWHOLECOMPONENTS/AppBackgroundColor.module" as *;
+@use "../../../MAINCSSFORWHOLECOMPONENTS/FontColor.module" as *;
+@use "../../../MAINCSSFORWHOLECOMPONENTS/SidePaddings.module" as *;
+@use "../../../MAINCSSFORWHOLECOMPONENTS/_ButtonsGroupBackAndNext.module.scss"
+  as *;
+@use "../../../MAINCSSFORWHOLECOMPONENTS/_CarDescription.module.scss" as *;
+// car-description-model-name
+
+// car-description-specifications
+
+@mixin car-descriptions {
+  .carContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    position: relative;
+    border: 1px solid $font-color;
+    margin-bottom: 14px;
+    padding: 9px;
+    opacity: 0.5;
+    cursor: pointer;
+    &:hover {
+      opacity: 1;
+    }
+  }
+  .carContainerSelected {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    position: relative;
+    border: 1px solid $font-color;
+    margin-bottom: 14px;
+    padding: 9px;
+    opacity: 1;
+    cursor: pointer;
+  }
+
+  .carImageBlock {
+    width: 50%;
+    margin-right: 10px;
+  }
+  .orSimiliar {
+    position: absolute;
+    width: 75px;
+    height: 20px;
+    background-color: #ac8159;
+    color: $font-color;
+    font-size: 13px;
+    padding-left: 12px;
+    border-top-left-radius: 8px;
+    padding-top: 2px;
+  }
+  .carImageSelf {
+    width: 100%;
+    height: 100%;
+    border-radius: 9px;
+  }
+  .carDescriptionTextBlock {
+    width: 50%;
+  }
+  .carDescriptionTextContainer {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .carModel {
+    @include car-description-model-name;
+  }
+
+  .detailedDescription {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .detailedDescriptionTitleContainer {
+  }
+  .detailedDescriptionTitleSelf {
+    @include car-description-specifications;
+  }
+  .detailedDescriptionValueAmountSelf {
+    color: $font-color;
+    font-size: 15;
+    font-weight: 600;
+  }
+  .detailedDescriptionPointedLineContainer {
+    flex-grow: 1;
+  }
+  .detailedDescriptionPointedLineSelf {
+    margin-top: 12px;
+    background-color: transparent;
+    margin-left: 3px;
+    margin-right: 3px;
+    border-bottom: 2px dotted $font-color;
+  }
+  .detailedDescriptionValueContainer {
+  }
+  .detailedDescriptionValueSelf {
+    @include car-description-specifications;
+  }
+}
+
+.mainWrapperFleet {
+  @include whole-app-background;
+  @include side-paddings-for-whole-widget-page;
+  // width: 100%;
+  // height: 100%;
+
+  position: relative;
+  padding-bottom: 50px;
+}
+.contentContainer {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+
+  // padding-bottom: 70px;
+}
+.pageTitleContainer {
+  display: flex;
+  justify-content: flex-start;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.pageTitle {
+  @include global-title-styles;
+}
+.carListContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+// .detailedDescriptionTitleContainer {
+// }
+// .detailedDescriptionTitleSelf {
+// }
+// .detailedDescriptionPointedLineContainer {
+//   flex-grow: 1;
+// }
+// .detailedDescriptionPointedLineSelf {
+//   margin-top: 12px;
+//   background-color: transparent;
+//   margin-left: 3px;
+//   margin-right: 3px;
+//   border-bottom: 2px dotted black;
+// }
+// .detailedDescriptionValueContainer {
+// }
+// .detailedDescriptionValueSelf {
+// }
+
+@include car-descriptions;
+.fleetButtonGroupForPositioning {
+  width: 100%;
+  height: 42px;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  background: $whole-app-background;
+  padding-bottom: $buttons-margin-bottom;
+  border-bottom-right-radius: $whole-app-border-radius;
+  border-bottom-left-radius: $whole-app-border-radius;
+  // padding-bottom: 10px;
+  // right: 10px;
+  // padding: auto 10px;
+}
+
+// @include buttons-group;
+
+.fleetButtonGroupBlockContainer {
+  @include buttonGroupBlockContainer;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.buttonBackSelf {
+  @include buttonBackSelf;
+}
+
+.buttonNextSelf {
+  @include buttonNextSelf;
+}

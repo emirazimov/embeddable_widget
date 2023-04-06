@@ -1,0 +1,38 @@
+@use "../../MAINCSSFORWHOLECOMPONENTS/_FontColor.module.scss" as *;
+@use "../../MAINCSSFORWHOLECOMPONENTS/_AppBackgroundColor.module.scss" as *;
+@use "../../MAINCSSFORWHOLECOMPONENTS/_SidePaddings.module.scss" as *;
+
+.reservationFailedWrapper {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  @include side-paddings-for-whole-widget-page;
+}
+.reservationFailedTextContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.reservationFailedTextSelf {
+  @include global_second_title_styles;
+  text-align: center;
+  font-size: 16px;
+}
+.reservationFailedButtonContainer {
+}
+.reservationFailedButtonSelf {
+  width: 60px;
+  height: 33px;
+  text-align: center;
+  border: 1px solid $font-color;
+  background: transparent;
+  border-radius: 5px;
+  color: $font-color;
+  &:hover {
+    cursor: pointer;
+    color: $whole-app-background;
+    background: $font-color;
+  }
+}

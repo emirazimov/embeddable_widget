@@ -1,0 +1,378 @@
+@use "../../../MAINCSSFORWHOLECOMPONENTS/MainInputsStyles.module" as *;
+@use "../../../MAINCSSFORWHOLECOMPONENTS/AppBackgroundColor.module" as *;
+@use "../../../MAINCSSFORWHOLECOMPONENTS/SidePaddings.module" as *;
+@use "../../../MAINCSSFORWHOLECOMPONENTS/FontColor.module" as *;
+@use "../FleetForm/FleetForm.module.scss" as *;
+@use "../../../MAINCSSFORWHOLECOMPONENTS/_ButtonsGroupBackAndNext.module.scss"
+  as *;
+
+$green: #2ecc71;
+$lightgray: lightgray;
+$background: grey;
+
+@mixin inactiveMixin {
+  content: "";
+  position: absolute;
+  display: block;
+}
+
+@mixin beforeAnimation {
+  transition: 0.2s cubic-bezier(0.24, 0, 0.5, 1);
+}
+
+@mixin afterAnimation {
+  box-shadow: 0 0 0 1px hsla(0, 0%, 0%, 0.1), 0 4px 0px 0 hsla(0, 0%, 0%, 0.04),
+    0 4px 9px hsla(0, 0%, 0%, 0.13), 0 3px 3px hsla(0, 0%, 0%, 0.05);
+  transition: 0.35s cubic-bezier(0.54, 1.6, 0.5, 1);
+}
+
+.switchContainer {
+  // margin: auto;
+  // padding: 20px;
+  // width: 55px;
+  // border: 1px solid $lightgray;
+  // margin-top: 20px;
+  // border-radius: 5px;
+  // background: white;
+  input {
+    &.switchSelf {
+      opacity: 0; // hides checkbox
+      position: absolute;
+      // & + label {
+      //   background: white;
+      // }
+      & + label {
+        position: relative;
+        display: inline-block;
+        user-select: none;
+        transition: 0.4s ease;
+        height: 17px;
+        width: 37px;
+        border: 1px solid white;
+        border-radius: 11px;
+
+        &:hover {
+          cursor: pointer;
+          // border: 1px solid white;
+          transition: 0.1s ease;
+        }
+        &:before {
+          @include inactiveMixin;
+          @include beforeAnimation;
+          height: 17px;
+          width: 37px;
+          top: 0;
+          left: 0;
+          border-radius: 30px;
+        }
+        &:after {
+          @include inactiveMixin;
+          @include afterAnimation;
+          background: $background;
+          height: 15px;
+          width: 15px;
+          top: 1px;
+          left: 0px;
+          border-radius: 60px;
+          // &:hover {
+          //   background: white;
+          //   transition: 0.1s ease;
+          // }
+        }
+        &:hover::after {
+          // @include inactiveMixin;
+          // @include afterAnimation;
+          background: white;
+          // height: 15px;
+          // width: 15px;
+          // top: 1px;
+          // left: 0px;
+          // border-radius: 60px;
+          // &:hover {
+          //   background: white;
+          //   transition: 0.1s ease;
+          // }
+        }
+      }
+      // When Active
+      &:checked {
+        & + label:before {
+          background: $green; // Active Color
+          transition: width 0.2s cubic-bezier(0, 0, 0, 0.1);
+        }
+
+        & + label:after {
+          left: 59%;
+          background: white;
+        }
+      }
+    }
+  }
+}
+
+/* The container */
+.checkmarkContainer {
+  // display: block;
+  position: relative;
+  // padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 22px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  margin-right: 40px;
+}
+
+/* Hide the browser's default checkbox */
+.checkmarkContainer {
+  input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+  }
+}
+
+/* Create a custom checkbox */
+.checkmarkSelf {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: transparent;
+  border: 1px solid white;
+  border-radius: 5px;
+}
+
+/* On mouse-over, add a grey background color */
+.checkmarkContainer:hover {
+  input ~ .checkmarkSelf {
+    -webkit-box-shadow: 0px 0px 5px -1px #ffffff;
+    box-shadow: 0px 0px 5px -1px #ffffff;
+  }
+}
+
+/* When the checkbox is checked, add a blue background */
+.checkmarkContainer {
+  input:checked ~ .checkmarkSelf {
+    background-color: transparent;
+  }
+}
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmarkSelf:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the checkmark when checked */
+.checkmarkContainer input:checked ~ .checkmarkSelf:after {
+  display: block;
+}
+
+/* Style the checkmark/indicator */
+// .checkmarkContainer,
+.checkmarkSelf:after {
+  left: 9px;
+  top: 5px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.errorInputs {
+  margin: 0;
+  margin-top: 3px;
+  color: red;
+  font-size: 13px;
+}
+.errorInputs {
+  margin: 0;
+  margin-top: 3px;
+  color: red;
+  font-size: 13px;
+}
+
+.formWrapper {
+  width: 100%;
+  @include whole-app-background;
+  height: 100%;
+}
+.paymentWrapper {
+  width: auto;
+  // @include side-paddings-for-whole-widget-page;
+  height: 100%;
+  @include side-paddings-for-whole-widget-page;
+
+  //   width: 100%;
+}
+.paymentContainer {
+  //   width: 100%;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.paymentTitleContainer {
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+.paymentTitleSelf {
+  @include global-title-styles;
+}
+.isPassengerCardholderContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.isPassengerCardholderTitleContainer {
+}
+.isPassengerCardholderTitleWhiteSelf {
+  font-size: 16px;
+  color: $font-color;
+}
+.isPassengerCardholderTitleGreySelf {
+  color: #757575;
+}
+
+.passengerDetailWrapper {
+}
+.passengerDetailTitleContainer,
+.cardholderInformationTitleContainer,
+.cardInformationTitleContainer {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.passengerDetailTitleSelf,
+.cardholderInformationTitleSelf,
+.cardInformationTitleSelf {
+  font-size: 15px;
+  color: $font-color;
+}
+
+.cardholderInformationWrapper {
+}
+// cardholderInformationTitleContainer
+// cardholderInformationTitleSelf
+
+.cardholderInformationInputsWrapper {
+  width: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-bottom: 16px;
+}
+.cardholderInformationInputsContainerForPositionErrorMessage {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  // justify-content: center;
+  // align-items: flex-start;
+}
+// .cardholderInformationInputsWrapperJustForFirstAndLastName {
+//   width: 100%;
+//   display: flex;
+//   flex-direction: row;
+//   justify-content: space-between;
+// }
+
+.cardholderInformationInputSelfContainer {
+}
+.cardholderInformationInputSelfContainer1 {
+  width: 50%;
+  margin-right: 7px;
+}
+.cardholderInformationInputSelfContainer2 {
+  // width: 100%;
+  width: 50%;
+}
+.cardholderInformationInputSelfContainerJustForFirstAndLastName {
+  width: 50%;
+  position: relative;
+  &:after {
+    position: absolute;
+    content: "";
+    border-right: 1px solid $inputs-color;
+    top: 28%;
+    right: 0;
+    width: 1px;
+    height: 44%;
+    margin-top: auto;
+    margin-bottom: auto;
+  }
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+.cardholderInformationInputSelf,
+.cardholderInformationInputSelfFirstName,
+.cardholderInformationInputSelfLastName {
+  @include main-inputs-size-and-background-styles-etc;
+  // &::placeholder {
+  //   @include payment-inputs-with-left-padding;
+  // }
+  width: 100%;
+  padding: 0;
+  text-indent: 20px;
+  &::-webkit-calendar-picker-indicator {
+    opacity: 100;
+    color: $inputs-color;
+  }
+}
+.cardholderInformationInputSelfFirstName {
+  border-right: none;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+.cardholderInformationInputSelfLastName {
+  border-left: none;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.cardholderInformationInputWithFullWidthSelf {
+  @include main-inputs-size-and-background-styles-etc;
+  // &::placeholder {
+  //   @include payment-inputs-with-left-padding;
+  // }
+  width: auto;
+  padding: 0;
+  padding-right: 25px;
+  text-indent: 20px;
+  &::-webkit-calendar-picker-indicator {
+    opacity: 1;
+    color: $inputs-color;
+  }
+}
+
+.checkboxWrapper {
+  // margin-bottom: 16px;
+}
+
+// @include buttons-group;
+.buttonGroupBlock {
+  // padding-bottom: 20px;
+}
+
+.buttonGroupBlockContainer {
+  @include buttonGroupBlockContainer;
+  @include margin-top-bottom-for-adressfrom-inputs;
+  @include buttons-margin-bottom;
+}
+
+.buttonBackSelf {
+  @include buttonBackSelf;
+}
+
+.buttonNextSelf {
+  @include buttonNextSelf;
+}

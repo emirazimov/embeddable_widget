@@ -1,0 +1,322 @@
+@use "../../../../MAINCSSFORWHOLECOMPONENTS/MainInputsStyles.module" as *;
+@use "../../../../MAINCSSFORWHOLECOMPONENTS/IconsForWholeAddressFormPage" as *;
+// @use "../../../../../../../../global" as *;
+@use "../../../../MAINCSSFORWHOLECOMPONENTS/AppBackgroundColor.module" as *;
+@use "../../../../MAINCSSFORWHOLECOMPONENTS/SidePaddings.module" as *;
+
+@use "../../../../MAINCSSFORWHOLECOMPONENTS/_FontColor.module.scss" as *;
+@use "../../FleetForm/FleetForm.module.scss" as *;
+@use "../../../../MAINCSSFORWHOLECOMPONENTS/_ButtonsGroupBackAndNext.module.scss"
+  as *;
+@use "../../../../MAINCSSFORWHOLECOMPONENTS/_MainCountersStyles.module.scss" as *;
+@use "../../../../MAINCSSFORWHOLECOMPONENTS/_ColorsForCustomize.module.scss" as *;
+@use "../../../../MAINCSSFORWHOLECOMPONENTS/_BorderRadiuses.module.scss" as *;
+
+$background-position-x-for-date-time-picker: 3%;
+
+.mainWrapper {
+  @include whole-app-background;
+  @include side-paddings-for-whole-widget-page;
+  width: auto;
+}
+.underMapOptionsContainerForAirlines {
+  width: 100%;
+}
+.underMapOptionsWrapper {
+  width: 100%;
+}
+.underMapOptionsContainer {
+  width: 100%;
+}
+
+.airlinesItem {
+  width: 100%;
+  display: flex;
+  @include margin-top-bottom-for-adressfrom-inputs;
+}
+.airLinesInput {
+  @include ticket_icon;
+  @include main-inputs-size-and-background-styles-etc;
+  @include addressform-inputs-with-icons;
+  // text-indent: 38px;
+  // padding: 0;
+}
+.flightNumberContainer {
+  width: 100%;
+  @include margin-top-bottom-for-adressfrom-inputs;
+}
+.flightNumberItem {
+  width: 100%;
+  display: flex;
+}
+.flightNumberInput {
+  @include airlines_icon;
+
+  @include main-inputs-size-and-background-styles-etc;
+  @include addressform-inputs-with-icons;
+}
+.dateTimeBlockContainer {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  @include margin-top-bottom-for-adressfrom-inputs;
+  // @include globals_styles;
+  // @import "https://bookinglane-widgets.s3.us-east-2.amazonaws.com/just-for-test/_global.scss/globals_styles";
+}
+.datePicker {
+  width: 50%;
+  margin-right: 16px;
+}
+
+.datePickerOpenButton,
+.datePickerOpenButtonWithRedBorder {
+  @include date_picker_icon;
+  @include main-inputs-size-and-background-styles-etc;
+  // @include addressform-inputs-with-icons;
+  // padding-right: 0;
+  text-indent: 36px;
+  background-position-x: $background-position-x-for-date-time-picker;
+  background-position-y: 60%;
+}
+
+.datePickerOpenButtonWithRedBorder {
+  border: 1px solid red;
+}
+.datePickerOpenButtonIcon {
+  @include date_picker_icon;
+}
+.datePickerOpenButtonText {
+}
+.timePicker {
+  width: 50%;
+}
+.timePickerContainer {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+}
+.timePickerInput,
+.timePickerInputWithRedBorder {
+  @include clock_icon;
+  @include main-inputs-size-and-background-styles-etc;
+  @include addressform-inputs-with-icons;
+  background-position-x: $background-position-x-for-date-time-picker;
+}
+.timePickerInputWithRedBorder {
+  border: 1px solid red;
+}
+.toggleButtonsContainer {
+  display: flex;
+  flex-direction: row;
+
+  position: absolute;
+  top: 23%;
+  right: 7px;
+
+  border-radius: 3px;
+}
+.toggleButtonAMNotSelected,
+.toggleButtonPMNotSelected {
+  width: 30px;
+  height: 21px;
+  font-size: 13px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: $whole-app-background;
+  color: $font-color;
+  transition: 0.1s;
+  &:hover {
+    filter: brightness(85%);
+    cursor: pointer;
+    transition: 0.15s;
+  }
+}
+.toggleButtonAMSelected,
+.toggleButtonPMSelected {
+  width: 30px;
+  height: 21px;
+  font-size: 13px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: $whole-app-background;
+  color: $font-color;
+  transition: 0.1s;
+  filter: brightness(125%);
+  // border: 1px solid green;
+}
+.safetySeatWrapper,
+.hourlyWrapper,
+.meetAndGreetWrapper {
+}
+.hourlyIconSelf {
+  @include clock_icon;
+  // background: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12 2C6.47768 2 2 6.47768 2 12C2 17.5223 6.47768 22 12 22C17.5223 22 22 17.5223 22 12C22 6.47768 17.5223 2 12 2ZM12 20.3036C7.41518 20.3036 3.69643 16.5848 3.69643 12C3.69643 7.41518 7.41518 3.69643 12 3.69643C16.5848 3.69643 20.3036 7.41518 20.3036 12C20.3036 16.5848 16.5848 20.3036 12 20.3036Z' fill='#{$main-color}'/%3E%3Cpath d='M15.899 14.8267L12.716 12.5254V7.00084C12.716 6.90262 12.6356 6.82227 12.5374 6.82227H11.4637C11.3655 6.82227 11.2852 6.90262 11.2852 7.00084V13.1482C11.2852 13.2062 11.3119 13.2598 11.3588 13.2932L15.0508 15.9852C15.1311 16.0432 15.2427 16.0254 15.3008 15.9473L15.9392 15.0767C15.9972 14.9941 15.9794 14.8825 15.899 14.8267Z' fill='#{$main-color}'/%3E%3C/svg%3E%0A")
+  //   no-repeat left;
+  width: 24px;
+  height: 24px;
+  @include counters-and-switches-icon-margins;
+}
+.safetySeatIconSelf {
+  @include safety_seat_icon;
+  width: 24px;
+  height: 24px;
+  @include counters-and-switches-icon-margins;
+}
+.meetAndGreetWrapper {
+  width: 100%;
+}
+.meetAndGreetIconSelf {
+  @include meet_and_greet_icon;
+  width: 24px;
+  height: 24px;
+  @include counters-and-switches-icon-margins;
+}
+.safetySeatContainer,
+.hourlyRowContainer,
+.meetAndGreetContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+.safetySeatIconAndNameContainer,
+.hourlyIconAndNameContainer,
+.meetAndGreetIconAndNameContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.preferencesTitleContainer {
+  margin: 14px auto;
+}
+
+.safetySeatIconAndNameTitle,
+.hourlyIconAndNameTitle,
+.meetAndGreetIconAndNameTitle,
+.preferencesTitle {
+  @include global_second_title_styles;
+}
+
+.meetAndGreetIconAndNameTitle,
+.safetySeatIconAndNameTitle,
+.hourlyIconAndNameTitle {
+  margin: 11px auto;
+}
+// .carouselContainer {
+//   height: 78px;
+// }
+
+.carouselButtonsDisabled {
+  width: 30px;
+  height: 100%;
+  background: transparent;
+  color: grey;
+  border: 1px solid grey;
+  border-radius: $inputs-border-radius;
+  border-radius: $inputs-border-radius;
+  cursor: not-allowed;
+  // cursor: ;
+  // border-radius: ;
+}
+.carouselButtonsActive {
+  width: 30px;
+  height: 100%;
+  background: $cars-type-color;
+  color: $font-color;
+  border: 1px solid $font-color;
+  border-radius: $inputs-border-radius;
+  border-radius: $inputs-border-radius;
+  cursor: pointer;
+  transition: 0.2s;
+  &:hover {
+    background: $hover-color;
+    color: $inner-text-on-hover;
+    transition: 0.2s;
+  }
+}
+.carItemContainer {
+  width: 60px;
+  height: 98%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  background: $cars-type-color;
+  border: $inputs-border;
+  border-radius: $inner-elements-border-radius;
+  transition: 0.1s;
+  &:hover {
+    background: $hover-color;
+    cursor: pointer;
+    transition: 0.1s;
+    .carItemTitle {
+      color: $inner-text-on-hover;
+    }
+  }
+}
+.carItemContainerSelected {
+  width: 60px;
+  height: 98%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: $hover-color;
+  border: $inputs-border;
+  border-radius: $inner-elements-border-radius;
+  .carItemTitle {
+    color: $inner-text-on-hover;
+  }
+}
+.carItemTitleContainer {
+  height: 35%;
+  display: flex;
+  align-items: center;
+}
+.carItemTitle {
+  @include global_car_type_title;
+  margin: 0;
+}
+
+.carImageContainer {
+  height: 65%;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: center;
+}
+.carImageStylesForBiggerTypeOfImage {
+  // width: 80%;
+  height: 50%;
+  pointer-events: none;
+  user-select: none;
+}
+.carImage {
+  width: 95%;
+  height: 75%;
+  pointer-events: none;
+  user-select: none;
+}
+
+// @include buttons-group;
+.buttonGroupBlockContainer {
+  @include buttonGroupBlockContainer;
+  @include margin-top-bottom-for-adressfrom-inputs;
+  @include buttons-margin-bottom;
+  // margin: 20px auto;
+}
+
+.buttonBackSelf {
+  @include buttonBackSelf;
+}
+
+.buttonNextSelf {
+  @include buttonNextSelf;
+}
+
+// . {
+// }
+// date_picker_icon
+// time_picker_icon

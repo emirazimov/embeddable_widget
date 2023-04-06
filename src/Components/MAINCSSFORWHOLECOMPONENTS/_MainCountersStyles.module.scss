@@ -1,0 +1,99 @@
+@use "../MAINCSSFORWHOLECOMPONENTS/_AppBackgroundColor.module.scss" as *;
+@use "../MAINCSSFORWHOLECOMPONENTS/_FontColor.module.scss" as *;
+@use "../MAINCSSFORWHOLECOMPONENTS/_MainInputsStyles.module.scss" as *;
+@use "../MAINCSSFORWHOLECOMPONENTS/_ColorsForCustomize.module.scss" as *;
+
+// $icons-color: red;
+$height-for-counters: 35px;
+@mixin counters-and-switches-icon-margins {
+  margin-left: 5px;
+  margin-right: 9px;
+}
+
+@mixin clock_icon_for_counters {
+  width: 24px;
+  height: 24px;
+  background: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12 2C6.47768 2 2 6.47768 2 12C2 17.5223 6.47768 22 12 22C17.5223 22 22 17.5223 22 12C22 6.47768 17.5223 2 12 2ZM12 20.3036C7.41518 20.3036 3.69643 16.5848 3.69643 12C3.69643 7.41518 7.41518 3.69643 12 3.69643C16.5848 3.69643 20.3036 7.41518 20.3036 12C20.3036 16.5848 16.5848 20.3036 12 20.3036Z' fill='#{$icons-color}'/%3E%3Cpath d='M15.899 14.8267L12.716 12.5254V7.00084C12.716 6.90262 12.6356 6.82227 12.5374 6.82227H11.4637C11.3655 6.82227 11.2852 6.90262 11.2852 7.00084V13.1482C11.2852 13.2062 11.3119 13.2598 11.3588 13.2932L15.0508 15.9852C15.1311 16.0432 15.2427 16.0254 15.3008 15.9473L15.9392 15.0767C15.9972 14.9941 15.9794 14.8825 15.899 14.8267Z' fill='#{$icons-color}'/%3E%3C/svg%3E%0A")
+    no-repeat center;
+  background-size: 100%;
+}
+
+@mixin passenger_icon_for_counters {
+  width: 24px;
+  height: 24px;
+  background: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12.0001 2C6.48005 2 2 6.47998 2 12C2 17.5199 6.48005 21.9999 12.0001 21.9999C17.5202 21.9999 22.0002 17.5199 22.0002 12C22.0002 6.47998 17.5202 2 12.0001 2ZM7.07005 18.2799C7.50006 17.3799 10.1201 16.4999 12.0001 16.4999C13.8801 16.4999 16.5101 17.3799 16.9302 18.2799C15.5701 19.3599 13.8601 19.9999 12.0001 19.9999C10.1401 19.9999 8.43007 19.3599 7.07005 18.2799ZM18.3602 16.8299C16.9302 15.09 13.4601 14.5 12.0001 14.5C10.5401 14.5 7.07005 15.09 5.64004 16.8299C4.57768 15.4438 4.00133 13.7464 4.00002 12C4.00002 7.58998 7.59006 3.99999 12.0001 3.99999C16.4101 3.99999 20.0002 7.58998 20.0002 12C20.0002 13.82 19.3802 15.49 18.3602 16.8299ZM12.0001 5.99999C10.0601 5.99999 8.50007 7.55998 8.50007 9.49997C8.50007 11.44 10.0601 13 12.0001 13C13.9401 13 15.5001 11.44 15.5001 9.49997C15.5001 7.55998 13.9401 5.99999 12.0001 5.99999ZM12.0001 11C11.1701 11 10.5001 10.33 10.5001 9.49997C10.5001 8.66998 11.1701 7.99998 12.0001 7.99998C12.8301 7.99998 13.5001 8.66998 13.5001 9.49997C13.5001 10.33 12.8301 11 12.0001 11Z' fill='#{$icons-color}'/%3E%3C/svg%3E%0A")
+    no-repeat left;
+  background-size: 100%;
+}
+
+@mixin counters-button-styles {
+  width: 34px;
+  height: $height-for-counters;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  border: none;
+  background: $whole-app-background;
+  filter: brightness(85%);
+  // position: relative;
+}
+
+@mixin counters-buttons-minus-icon {
+  &::before {
+    content: "";
+    width: 12px;
+    height: 2px;
+    background: $font-color;
+    // position: absolute;
+    // top: 50%;
+    // left: 50%;
+  }
+}
+
+@mixin counters-buttons-plus-icon {
+  &::before {
+    content: "";
+    width: 12px;
+    height: 2px;
+    background: $font-color;
+    position: absolute;
+    // position: absolute;
+    // top: 50%;
+    // left: 50%;
+  }
+  &::after {
+    content: "";
+    width: 12px;
+    height: 1.7px;
+    background: white;
+    transform: rotate(90deg);
+    position: absolute;
+    // position: absolute;
+    // top: 50%;
+    // left: 50%;
+  }
+}
+
+@mixin counters-input-styles {
+  min-width: 34px;
+  max-width: 34px;
+  // marginLeft: "2px",
+  // marginRight: "2.5px",
+  // marginBottom: "4px",
+  height: calc($height-for-counters - 2px);
+  border-top: $inputs-border;
+  border-bottom: $inputs-border;
+  border-right: none;
+  border-left: none;
+  background-color: $whole-app-background;
+
+  // border: none;
+  color: $font-color;
+  text-align: center;
+  font-family: Roboto;
+  text-transform: none;
+  font-weight: 400;
+  font-size: 14px;
+  padding: 0;
+}

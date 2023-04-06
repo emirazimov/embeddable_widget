@@ -1,0 +1,39 @@
+@use "../../MAINCSSFORWHOLECOMPONENTS/_FontColor.module.scss" as *;
+@use "../../MAINCSSFORWHOLECOMPONENTS/_AppBackgroundColor.module.scss" as *;
+@use "../../MAINCSSFORWHOLECOMPONENTS/_SidePaddings.module.scss" as *;
+
+.confirmationWrapper {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  @include side-paddings-for-whole-widget-page;
+}
+.confirmationTextContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.confirmationTextSelf1,
+.confirmationTextSelf2 {
+  @include global_second_title_styles;
+  text-align: center;
+  font-size: 16px;
+}
+.confirmationButtonContainer {
+}
+.confirmationButtonSelf {
+  width: 60px;
+  height: 33px;
+  text-align: center;
+  border: 1px solid $font-color;
+  background: transparent;
+  border-radius: 5px;
+  color: $font-color;
+  &:hover {
+    cursor: pointer;
+    color: $whole-app-background;
+    background: $font-color;
+  }
+}

@@ -1,0 +1,53 @@
+@use "../../../../MAINCSSFORWHOLECOMPONENTS/_IconsForWholeAddressFormPage.scss"
+  as *;
+@use "../../../../MAINCSSFORWHOLECOMPONENTS/_FontColor.module.scss" as *;
+@use "../../../../MAINCSSFORWHOLECOMPONENTS/MainInputsStyles.module" as *;
+@use "../../../../MAINCSSFORWHOLECOMPONENTS/_ButtonsGroupBackAndNext.module.scss"
+  as *;
+@use "../../../../MAINCSSFORWHOLECOMPONENTS/_MainCountersStyles.module.scss" as *;
+
+.luggageQuantityWrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.luggageQuantityIconAndTitleContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.luggageCounterTitle {
+  @include global_second_title_styles;
+}
+.luggageQuantityCounterContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.luggageQuantityIcon {
+  @include luggage_icon;
+  width: 24px;
+  height: 24px;
+  @include counters-and-switches-icon-margins;
+}
+.luggageQuantityInputSelf {
+  @include counters-input-styles;
+}
+
+.luggageQuantityMinusSelf,
+.luggageQuantityPlusSelf {
+  @include counters-button-styles;
+}
+
+.luggageQuantityMinusSelf {
+  @include counters-buttons-minus-icon;
+  border: $inputs-border;
+  border-top-left-radius: $inputs-border-radius;
+  border-bottom-left-radius: $inputs-border-radius;
+}
+.luggageQuantityPlusSelf {
+  @include counters-buttons-plus-icon;
+  border: $inputs-border;
+  border-top-right-radius: $inputs-border-radius;
+  border-bottom-right-radius: $inputs-border-radius;
+}

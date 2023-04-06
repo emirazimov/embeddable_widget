@@ -1,0 +1,11 @@
+@use "../../MAINCSSFORWHOLECOMPONENTS/_FontColor.module.scss" as *;
+
+.termOfUseOpenButton {
+  width: auto;
+  height: auto;
+  border: none;
+  cursor: pointer;
+  color: $font-color;
+  background: transparent;
+  font-size: 15px;
+}

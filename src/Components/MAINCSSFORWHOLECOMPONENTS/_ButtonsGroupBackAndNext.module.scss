@@ -1,0 +1,43 @@
+@use "./_AppBackgroundColor.module.scss" as *;
+@use "./_FontColor.module.scss" as *;
+@use "./_ColorsForCustomize.module.scss" as *;
+@use "./_BorderRadiuses.module.scss" as *;
+
+$buttons-margin-bottom: 15px;
+
+@mixin buttonGroupBlockContainer {
+  width: auto;
+  height: 42px;
+  display: flex;
+  flex-direction: row;
+}
+
+@mixin buttonBackSelf {
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  background: $back-and-next-buttons-color;
+  border-radius: $inner-elements-border-radius;
+  margin-right: 10px;
+  transition: 0.1s;
+  &:hover {
+    background: $hover-color;
+    transition: 0.1s;
+  }
+}
+@mixin buttonNextSelf {
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  background: $back-and-next-buttons-color;
+  border-radius: $inner-elements-border-radius;
+  transition: 0.2s;
+  &:hover {
+    background: $hover-color;
+    transition: 0.2s;
+  }
+}
+
+@mixin buttons-margin-bottom {
+  margin-bottom: $buttons-margin-bottom;
+}

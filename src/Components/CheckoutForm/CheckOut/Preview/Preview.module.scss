@@ -1,0 +1,119 @@
+@use "../../../MAINCSSFORWHOLECOMPONENTS/AppBackgroundColor.module" as *;
+@use "../FleetForm/FleetForm.module.scss" as *;
+@use "../../../MAINCSSFORWHOLECOMPONENTS/FontColor.module" as *;
+@use "../../../MAINCSSFORWHOLECOMPONENTS/SidePaddings.module" as *;
+@use "../../../MAINCSSFORWHOLECOMPONENTS/_ButtonsGroupBackAndNext.module.scss"
+  as *;
+@use "../../../MAINCSSFORWHOLECOMPONENTS/_MainInputsStyles.module.scss" as *;
+
+@include car-descriptions;
+.carContainer {
+  @include margin-top-bottom-for-adressfrom-inputs;
+  opacity: 1;
+}
+.previewWrapper {
+  @include whole-app-background;
+  @include side-paddings-for-whole-widget-page;
+
+  width: auto;
+}
+.previewTitleContainer {
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+.previewTitleSelf {
+  @include global-title-styles;
+}
+.reservationDetailsItem {
+  margin-bottom: 16px;
+}
+.reservationDetailsItemContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.reservationDetailsItemTitleContainer {
+}
+.reservationDetailsItemTitleSelf {
+  color: $font-color;
+}
+.reservationDetailsItemPointedLineContainer {
+  flex-grow: 1;
+}
+.reservationDetailsItemPointedLineSelf {
+  margin-top: 12px;
+  background-color: transparent;
+  margin-left: 3px;
+  margin-right: 3px;
+  border-bottom: 2px dotted $font-color;
+}
+
+.reservationDetailsItemValueContainer {
+  display: inline;
+  max-width: 60%;
+  text-align: right;
+}
+.reservationDetailsItemValueSelf {
+  display: inline;
+  // fontSize: "16px",
+  width: 100%;
+  color: $font-color;
+}
+
+.notesTextFieldContainer {
+  width: 100%;
+  // @include margin-top-bottom-for-adressfrom-inputs;
+  margin-top: 30px;
+  // margin-bottom: 15px;
+}
+.notesTextFieldSelf {
+  width: 100%;
+  // display: block;
+  height: 45px;
+  color: $font-color;
+  font-family: "Vazir", sans-serif;
+  font-size: 15px;
+  border: none;
+  outline: none;
+  resize: none;
+  padding: 0;
+  background: transparent;
+  border-bottom: 1px solid $font-color;
+  &::-webkit-input-placeholder {
+    font-size: 15px;
+    color: $font-color;
+    font-family: "Vazir", sans-serif;
+  }
+  &:-moz-placeholder {
+    /* Upto Firefox 18, Deprecated in Firefox 19  */
+    font-size: 15px;
+    color: $font-color;
+    font-family: "Vazir", sans-serif;
+  }
+  &::-moz-placeholder {
+    /* Firefox 19+ */
+    font-size: 15px;
+    color: $font-color;
+    font-family: "Vazir", sans-serif;
+  }
+  &:-ms-input-placeholder {
+    font-size: 15px;
+    color: $font-color;
+    font-family: "Vazir", sans-serif;
+  }
+}
+
+// @include buttons-group;
+.buttonGroupBlockContainer {
+  @include buttonGroupBlockContainer;
+  @include margin-top-bottom-for-adressfrom-inputs;
+  @include buttons-margin-bottom;
+}
+
+.buttonBackSelf {
+  @include buttonBackSelf;
+}
+
+.buttonNextSelf {
+  @include buttonNextSelf;
+}

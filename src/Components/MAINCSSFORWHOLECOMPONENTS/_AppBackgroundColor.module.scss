@@ -1,0 +1,8 @@
+@use "./_BorderRadiuses.module.scss" as *;
+
+$whole-app-background: rgb(20, 3, 46);
+$whole-app-border-radius: $main-outer-border-raidus;
+
+@mixin whole-app-background {
+  background-color: $whole-app-background;
+}

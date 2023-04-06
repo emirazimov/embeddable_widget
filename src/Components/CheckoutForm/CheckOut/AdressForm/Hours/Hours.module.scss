@@ -1,0 +1,65 @@
+@use "../../../../MAINCSSFORWHOLECOMPONENTS/MainCountersStyles.module" as *;
+@use "../../../../MAINCSSFORWHOLECOMPONENTS/_FontColor.module.scss" as *;
+@use "../../../../MAINCSSFORWHOLECOMPONENTS/MainInputsStyles.module" as *;
+// @use "../../../../MAINCSSFORWHOLECOMPONENTS/IconsForWholeAddressFormPage" as *;
+
+@use "../../../../MAINCSSFORWHOLECOMPONENTS/_MainCountersStyles.module.scss" as *;
+
+.hoursCounterWrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.hoursCounterIconAndTitleContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.hoursCounterIcon {
+  @include clock_icon_for_counters;
+  //   background: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12 2C6.47768 2 2 6.47768 2 12C2 17.5223 6.47768 22 12 22C17.5223 22 22 17.5223 22 12C22 6.47768 17.5223 2 12 2ZM12 20.3036C7.41518 20.3036 3.69643 16.5848 3.69643 12C3.69643 7.41518 7.41518 3.69643 12 3.69643C16.5848 3.69643 20.3036 7.41518 20.3036 12C20.3036 16.5848 16.5848 20.3036 12 20.3036Z' fill='#{$main-color}'/%3E%3Cpath d='M15.899 14.8267L12.716 12.5254V7.00084C12.716 6.90262 12.6356 6.82227 12.5374 6.82227H11.4637C11.3655 6.82227 11.2852 6.90262 11.2852 7.00084V13.1482C11.2852 13.2062 11.3119 13.2598 11.3588 13.2932L15.0508 15.9852C15.1311 16.0432 15.2427 16.0254 15.3008 15.9473L15.9392 15.0767C15.9972 14.9941 15.9794 14.8825 15.899 14.8267Z' fill='#{$main-color}'/%3E%3C/svg%3E%0A")
+  //     no-repeat center;
+  //   margin-left: 50px;
+  //   @include main-inputs-size-and-background-styles-etc;
+  @include counters-and-switches-icon-margins;
+}
+.hoursCounterTitle {
+  @include global-second-title-styles;
+  // font-size: 15px;
+}
+.hoursCounterPlusMinusContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.hoursCounterInput {
+  @include counters-input-styles;
+}
+
+.hoursCounterMinus,
+.hoursCounterPlus {
+  @include counters-button-styles;
+}
+
+.hoursCounterMinus {
+  @include counters-buttons-minus-icon;
+  border: $inputs-border;
+  border-top-left-radius: $inputs-border-radius;
+  border-bottom-left-radius: $inputs-border-radius;
+}
+.hoursCounterPlus {
+  @include counters-buttons-plus-icon;
+  border: $inputs-border;
+  border-top-right-radius: $inputs-border-radius;
+  border-bottom-right-radius: $inputs-border-radius;
+}
+
+// .hoursCounterInput::-webkit-outer-spin-button,
+// .hoursCounterInput::-webkit-inner-spin-button {
+//   /* display: none; <- Crashes Chrome on hover */
+//   -webkit-appearance: none !important;
+//   /* <-- Apparently some margin are still there even though it's hidden */
+// }

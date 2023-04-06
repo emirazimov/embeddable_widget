@@ -1,0 +1,97 @@
+@use "../MAINCSSFORWHOLECOMPONENTS/AppBackgroundColor.module" as *;
+@use "../MAINCSSFORWHOLECOMPONENTS/SidePaddings.module" as *;
+@use "../MAINCSSFORWHOLECOMPONENTS/FontColor.module" as *;
+@use "../MAINCSSFORWHOLECOMPONENTS/_ColorsForCustomize.module.scss" as *;
+@use "../MAINCSSFORWHOLECOMPONENTS/_BorderRadiuses.module.scss" as *;
+
+.companyProfileWrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  @include whole-app-background;
+  @include side-paddings-for-whole-widget-page;
+  padding-top: 10px;
+  padding-bottom: 5px;
+  border-bottom: 1px solid grey;
+  border-top-left-radius: $whole-app-border-radius;
+  border-top-right-radius: $whole-app-border-radius;
+}
+.companyProfileImageSelf {
+  width: 55px;
+  height: 55px;
+  border-radius: 100px;
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-drag: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+}
+.companyProfileImageContainer {
+  flex-basis: 17%;
+}
+.companyProfileNameContainer {
+  flex-basis: 78%;
+}
+.companyProfileNameSelf {
+  @include global-title-styles;
+}
+.companyProfileCloseIconContainer {
+  flex-basis: 5%;
+  &:hover {
+    cursor: pointer;
+  }
+}
+.companyProfileCloseIconSelf {
+  // &:hover {
+
+  // }
+  width: 23px;
+  height: 23px;
+  position: relative;
+  transition: 0.1s;
+  border-radius: $inner-elements-border-radius;
+  &:hover {
+    background: $hover-color;
+    transition: 0.1s;
+    .companyProfileCloseIconSelfCustomCreation {
+      &::before {
+        background: $inner-text-on-hover;
+        transition: 0.1s;
+      }
+      &::after {
+        background: $inner-text-on-hover;
+        transition: 0.1s;
+      }
+    }
+  }
+}
+.companyProfileCloseIconSelfCustomCreation {
+  &::before {
+    content: "";
+    width: 17px;
+    height: 2px;
+    background: $font-color;
+    transform: rotate(225deg);
+    position: absolute;
+    bottom: 46%;
+    left: 11%;
+    transition: 0.1s;
+    // position: absolute;
+    // top: 50%;
+    // left: 50%;
+  }
+  &::after {
+    content: "";
+    width: 17px;
+    height: 2px;
+    background: $font-color;
+    transform: rotate(135deg);
+    position: absolute;
+    bottom: 46%;
+    left: 11%;
+    transition: 0.1s;
+    // position: absolute;
+    // top: 50%;
+    // left: 50%;
+  }
+}

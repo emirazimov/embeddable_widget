@@ -1,0 +1,22 @@
+@use "./_ColorsForCustomize.module.scss" as *;
+
+$font-color: $font-color-for-customize;
+
+@mixin global-title-styles {
+  font-size: 24px;
+  font-weight: 600;
+  color: $font-color;
+}
+
+@mixin global_second_title_styles {
+  font-size: 14px;
+  font-weight: 300;
+  color: $font-color;
+}
+
+@mixin global_car_type_title {
+  text-transform: uppercase;
+  font-size: 11px;
+  font-weight: 600;
+  color: $font-color;
+}
